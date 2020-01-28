@@ -17,7 +17,7 @@ class Project(models.Model):
 
     status = models.IntegerField(choices=Status.choices, null=False, default=Status.ACTIVE)
     description = models.CharField(max_length=150, null=True)
-    labels = models.ManyToManyField(Label, null=True)
+    labels = models.ManyToManyField(Label)
 
     def __str__(self):
         return "{}'s {}".format(self.user.username, self.title)
@@ -34,7 +34,7 @@ class Task(models.Model):
     description = models.CharField(max_length=150, null=True)
     scheduled_for = models.DateTimeField(auto_now_add=False, null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    labels = models.ManyToManyField(Label, null=True)
+    labels = models.ManyToManyField(Label)
 
     def __str__(self):
         return "{}:{}".format(str(self.project), self.title)
@@ -46,7 +46,7 @@ class Activity(models.Model):
 
     notes = models.CharField(max_length=150, null=True)
     task = models.ForeignKey(Task, on_delete=models.SET_NULL, null=True)
-    labels = models.ManyToManyField(Label, null=True)
+    labels = models.ManyToManyField(Label)
 
     def __str__(self):
         return "{} - {}".format(str(self.task), self.start)

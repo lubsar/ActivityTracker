@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Project, Label, Task, Activity
+
+#register models
+admin.site.register(Project)
+admin.site.register(Task)
+admin.site.register(Activity)
+admin.site.register(Label)
