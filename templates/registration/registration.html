@@ -1,0 +1,33 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+  <h1 id="title">Webtracker</h1>
+  <div class="form_wrapper">
+    <form method="post" action="{% url 'account_registration' %}">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password.label_tag }}</td>
+          <td>{{ form.password }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.confirm_password.label_tag }}</td>
+          <td>{{ form.confirm_password }}</td>
+        </tr>
+      </table>
+      <input id="submit_bttn" type="submit" value="Sign up"/>
+      <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+    </form>
+    {% if no_pw_match %}
+      <p>Your passwords didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if user_taken %}
+      <p>Username is already register, please choose other username or <a href="/">log in</a>.</p>
+    {% endif %}
+  </div>
+{% endblock %}
