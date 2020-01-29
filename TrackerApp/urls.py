@@ -3,6 +3,7 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-        path('accounts/', include('django.contrib.auth.urls')),
-        path('accounts/register', account_registration, name="account_registration"),
+    path('accounts/', include('TrackerApp.auth.urls')),
+    path('', index, name='index'),
+    path('test', test, name='test'),
 ]
