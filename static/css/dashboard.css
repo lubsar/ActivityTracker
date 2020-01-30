@@ -1,0 +1,95 @@
+/* task */
+.material-icons-outlined.task-icons {
+  font-size: calc(28px + 0.5vmin);
+  padding: 1vmin;
+}
+
+.material-icons-outlined.task-check-mark {
+  font-size: calc(28px + 0.5vmin);
+  color: #555555;
+  padding: 1vmin;
+}
+
+a .task-check-mark:hover {
+  color: #00FF19;
+}
+
+.material-icons-outlined.task-start {
+  font-size: calc(28px + 0.5vmin);
+  color: #555555;
+  padding: 1vmin;
+}
+
+a .task-start:hover {
+  color: #00FF19;
+}
+
+.material-icons-outlined.task-add {
+  font-size: calc(55px + 0.5vmin);
+  color: #555555;
+  padding: 1vmin;
+}
+
+a .task-add:hover {
+  color: #999999;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task .left {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-flex-start;
+  align-items: center;
+}
+
+.task .right {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.task-info {
+  width: 80%;
+}
+
+.task-time {
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(12px + 0.5vmin);
+  color: #555555;
+  padding-right: 1vmin;
+}
+
+.task-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(14px + 0.5vmin);
+  font-weight: bold;
+
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin: 0.5vh 0 0 0;
+}
+
+.task-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(10px + 0.5vmin);
+  color: color: #555555;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}

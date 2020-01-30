@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
+
+from django.http import HttpResponse
 
 #auth
 from django.contrib.auth.models import User
@@ -9,7 +11,7 @@ from .forms import *
 def index(request):
     if request.user.is_authenticated:
         #user dashboard
-        return HttpResponse("loged in")
+        return render(request, 'dashboard.html')
     else:
         #index page w/ login/register etc.
          return redirect('login')

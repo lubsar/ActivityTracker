@@ -5,5 +5,4 @@ from .views import *
 urlpatterns = [
     path('accounts/', include('TrackerApp.auth.urls')),
     path('', index, name='index'),
-    path('test', test, name='test'),
 ]
