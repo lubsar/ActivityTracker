@@ -1,26 +1,18 @@
 /* task */
 .material-icons-outlined.task-icons {
   font-size: calc(28px + 0.5vmin);
-  padding: 1vmin;
+  flex-basis: 5%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  padding-top: 10px;
 }
 
-.material-icons-outlined.task-check-mark {
-  font-size: calc(28px + 0.5vmin);
-  color: #555555;
-  padding: 1vmin;
+.material-icons-outlined.task-check-mark, .material-icons-outlined.task-start, .material-icons-outlined.task-cancel {
+  color: #888888;
+  padding-top: 10px;
 }
 
-a .task-check-mark:hover {
-  color: #00FF19;
-}
-
-.material-icons-outlined.task-start {
-  font-size: calc(28px + 0.5vmin);
-  color: #555555;
-  padding: 1vmin;
-}
-
-a .task-start:hover {
+a .task-check-mark:hover, .task-start:hover {
   color: #00FF19;
 }
 
@@ -37,36 +29,53 @@ a .task-add:hover {
 .task {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 5px;
 }
 
-.task .left {
-  width: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-flex-start;
-  align-items: center;
+.material-icons-outlined.task-cancel {
+  display: none;
 }
 
-.task .right {
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+/* COLLAPSING */
+.collapsible.expanded .task-info .task-title {
+  background-color: red;
+  white-space: normal;
 }
+
+.collapsible.expanded .task-info .task-description {
+  background-color: red;
+  white-space: normal;
+}
+
+.collapsible.expanded .task-actions .material-icons-outlined.task-cancel {
+  display: block;
+}
+
+.collapsible.expanded.task {
+  background-color: blue;
+}
+
+/* END COLLAPSING */
 
 .task-info {
-  width: 80%;
+  flex-basis: 75%;
+  flex-grow: 0;
+  flex-shrink: 5;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .task-time {
   font-family: 'Roboto', sans-serif;
   font-size: calc(12px + 0.5vmin);
+  text-align: center;
   color: #555555;
-  padding-right: 1vmin;
+  flex-basis: 15%;
+  flex-grow: 0;
+  flex-shrink: 1;
 }
 
 .task-title {
@@ -79,7 +88,7 @@ a .task-add:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
-  margin: 0.5vh 0 0 0;
+  margin: 0;
 }
 
 .task-description {
