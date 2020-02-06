@@ -1,31 +1,6 @@
-/* task */
-.material-icons-outlined.task-icons {
-  font-size: calc(28px + 0.5vmin);
-  flex-basis: 5%;
-  flex-grow: 0;
-  flex-shrink: 1;
-  padding-top: 10px;
-}
+/* Task */
 
-.material-icons-outlined.task-check-mark, .material-icons-outlined.task-start, .material-icons-outlined.task-cancel {
-  color: #888888;
-  padding-top: 10px;
-}
-
-a .task-check-mark:hover, .task-start:hover {
-  color: #00FF19;
-}
-
-.material-icons-outlined.task-add {
-  font-size: calc(55px + 0.5vmin);
-  color: #555555;
-  padding: 1vmin;
-}
-
-a .task-add:hover {
-  color: #999999;
-}
-
+/*Components*/
 .task {
   display: flex;
   flex-direction: row;
@@ -33,32 +8,9 @@ a .task-add:hover {
   justify-content: space-around;
   align-items: flex-start;
   padding: 5px;
-}
 
-.material-icons-outlined.task-cancel {
-  display: none;
+  cursor: col-resize;
 }
-
-/* COLLAPSING */
-.collapsible.expanded .task-info .task-title {
-  background-color: red;
-  white-space: normal;
-}
-
-.collapsible.expanded .task-info .task-description {
-  background-color: red;
-  white-space: normal;
-}
-
-.collapsible.expanded .task-actions .material-icons-outlined.task-cancel {
-  display: block;
-}
-
-.collapsible.expanded.task {
-  background-color: blue;
-}
-
-/* END COLLAPSING */
 
 .task-info {
   flex-basis: 75%;
@@ -101,4 +53,61 @@ a .task-add:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
+  resize: none;
 }
+
+/*Icons*/
+.material-icons-outlined.task-icons {
+  font-size: calc(28px + 0.5vmin);
+  flex-basis: 5%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  padding-top: 10px;
+}
+
+.material-icons-outlined.task-check-mark, .material-icons-outlined.task-start, .material-icons-outlined.task-cancel {
+  color: #888888;
+  padding-top: 10px;
+}
+
+a .task-check-mark:hover, .task-start:hover {
+  color: #00FF19;
+}
+
+.material-icons-outlined.task-add {
+  font-size: calc(55px + 0.5vmin);
+  color: #555555;
+  padding: 1vmin;
+}
+
+a .task-add:hover {
+  color: #999999;
+}
+
+.material-icons-outlined.task-cancel {
+  display: none;
+}
+
+/* COLLAPSING */
+.collapsible {}
+
+.expanded {}
+
+.expanded .task-title, .expanded .task-description {
+  white-space: normal;
+}
+
+.expanded .task-description:focus {
+  outline: none;
+  border: 1px black solid;
+  box-shadow: 2px 2px black;
+}
+
+.expanded .material-icons-outlined.task-cancel  {
+  display: block;
+}
+
+.expanded {
+}
+
+/* END COLLAPSING */
